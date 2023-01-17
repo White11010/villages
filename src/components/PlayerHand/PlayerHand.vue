@@ -52,11 +52,10 @@ const onExpandButtonClick = (): void => {
 
 <style lang="scss" scoped>
 .player-hand {
-
   background-color: #9E900F;
   box-sizing: border-box;
   border: 1px solid black;
-
+  transition: all ease-out .2s;
 
   &__container {
     position: relative;
@@ -76,8 +75,12 @@ const onExpandButtonClick = (): void => {
 
 // Top side player hand styles
 .player-hand--top {
-  height: 150px;
-  width: 1040px;
+  height: 100px;
+
+  &-expanded {
+    height: 400px;
+    z-index: 3;
+  }
 
   .player-hand__expand-button {
     left: calc(50% - 36px);
@@ -87,24 +90,11 @@ const onExpandButtonClick = (): void => {
 
 // Bottom side player hand styles
 .player-hand--bottom {
-  height: 150px;
-  width: 1040px;
-  transition: height ease-out .2s;
+  height: 100px;
 
   &-expanded {
     height: 400px;
     z-index: 3;
-
-    //&::before {
-    //  content: '';
-    //  position: fixed;
-    //  top: 0;
-    //  left: 0;
-    //  width: 100vw;
-    //  height: 100vh;
-    //  background-color: rgba(0, 0, 0, 0.5);
-    //  z-index: 2;
-    //}
   }
 
   .player-hand__expand-button {
@@ -115,8 +105,12 @@ const onExpandButtonClick = (): void => {
 
 // Left side player hand styles
 .player-hand--left {
-  height: 500px;
-  width: 150px;
+  width: 100px;
+
+  &-expanded {
+    width: 400px;
+    z-index: 3;
+  }
 
   .player-hand__expand-button {
     right: -36px;
@@ -126,8 +120,12 @@ const onExpandButtonClick = (): void => {
 
 // Right side player hand styles
 .player-hand--right {
-  height: 500px;
-  width: 150px;
+  width: 100px;
+
+  &-expanded {
+    width: 400px;
+    z-index: 3;
+  }
 
   .player-hand__expand-button {
     left: -36px;

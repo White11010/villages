@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <TheGame />
+  <router-view />
 </template>
 
 <style scoped>
