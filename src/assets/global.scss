@@ -1,5 +1,23 @@
-.button {
-  padding: 8px 20px;
-  border: 1px solid black;
-  border-radius: 10px;
+@import "./variables.scss";
+
+.button-main {
+  padding: 24px 30px;
+  border-radius: 20px;
+  background-color: $brown-light;
+  color: $yellow-main;
+  border: 2px solid $brown-dark;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    background-color: $brown-medium;
+  }
 }
