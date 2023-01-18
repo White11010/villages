@@ -20,31 +20,33 @@
         </div>
       </li>
     </ul>
-
-    <GameStartModal
-      v-if="showGameStartModal"
-      @click:start-button="onStartButtonClick"
-    />
   </section>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import { io } from "socket.io-client";
+import { useRouter } from 'vue-router'
 
-import GameStartModal from '../../components/GameStartModal/GameStartModal.vue';
+const router = useRouter();
 
-const socket = io('http://localhost:3000');
-
-const showGameStartModal = ref<boolean>(false);
 
 const onPlayButtonClick = (): void => {
-  showGameStartModal.value = true;
+  router.push({name: 'StartGameSettings'})
 }
 
+
+
 const onStartButtonClick = (name: string): void => {
-  socket.emit('start', name);
+  router.push({
+    name: 'Lobby',
+    params: {
+      lobbyId: Date.now().toString(),
+    },
+    query: {
+      name: name,
+    }
+  })
 }
+
 </script>
 
 <style lang="scss" scoped>
